@@ -139,6 +139,11 @@ personalizarParedes(Nivel1) { //Programacion del plano de Neptunos
 //aqui se programan las paredes que tendrá el segundo  nivel (Urano)
 personalizarParedes2(Nivel2) { //Programacion del plano de Urano
 
+    this.escaque = [];
+    this.arregloEscaque();
+    this.escaque2 = [];
+    this.arregloEscaque2();
+
     for (let fil = 0; fil < 20; fil++) {
         for (let col = 0; col < 20; col++) {
 
@@ -634,5 +639,13 @@ getLocacion(newFil, newCol){
     return this.escaque[newFil][newCol];
 
 }
+LlegadaCohete() {
+    if (dist(jugador.getX(), jugador.getY(), cohete.getX(), cohete.getY()) < 5) {
+
+       jugador.reset();
+       pantalla = 3;
+                                                  
+    }
+   }
 
 }
