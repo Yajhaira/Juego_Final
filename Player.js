@@ -5,12 +5,15 @@ class Player {
         this.yPos = 20;
         this.pCol = 0;
         this.pFil = 0;
+        this.vidas = 3; //esto se añade
         
 
     }
 mostrarProtagonista(){
-    fill(255, 0, 0);
-    ellipse(this.xPos, this.yPos, 30, 30);
+    //fill(255, 0, 0);
+    //ellipse(this.xPos, this.yPos, 30, 30);
+    imageMode(CENTER);
+    image(ImgProta,this.enemyPosX, this.enemyPosY,40, 40);
 }
 updateLocation(){
     this.xPos = (this.pCol * 40) + 20; // validamos el mapa en la matriz
@@ -61,18 +64,15 @@ setPfil(nuevoPfil) {
     this.pFil = nuevoPfil;
 }
 
-
-
-
-/*getVida() {
-    return vidas;
-}*/
-setVida(newVidas) {
-    vidas = newVidas;
+getVida() {//esto se añade
+    return this.vidas;
 }
-pvida() {
+setVida(newVidas) {//esto se añade
+    this.vidas = newVidas;
+}
+pvida() {//esto se añade
     console.log("funciona")
-    //this.setVida(this.getVida() - 1);
+    this.setVida(this.getVida() - 1);
 }
 }
 
